@@ -13,7 +13,7 @@ dir = 'right'
 offset =0 
 radius = 4
 
-move_rect = False
+move_rect = True
 start_move = False
 
 character.draw_now(0,90)
