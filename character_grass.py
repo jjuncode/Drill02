@@ -62,6 +62,6 @@ while(True):
                move_rect = True
                offset = 0
 
-    #delay(0.01)
+    delay(0.01)
 
 close_canvas()
