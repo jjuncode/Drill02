@@ -18,7 +18,7 @@ up_x = 700
 up_y = 550
 offset =0
 
-r = 5
+r = 10
 
 while(True):
     clear_canvas_now()
@@ -45,7 +45,9 @@ while(True):
             theta_y = r * math.sin(offset/360 * math.pi)
             x= x + theta_x
             y= y + theta_y
+            if ( y== init_y ):
+                move_rect = True
 
-    #delay(0.01)
+    delay(0.01)
 
 close_canvas()
