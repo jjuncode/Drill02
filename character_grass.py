@@ -12,7 +12,7 @@ init_y = 90
 
 character.draw_now(0,90)
 
-move_rect = False
+move_rect = True
 
 up_x = 700
 up_y = 550
