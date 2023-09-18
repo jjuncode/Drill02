@@ -11,8 +11,10 @@ y = 90
 
 dir = 'right'
 offset =0 
+radius = 4
 
-move_rect = True
+move_rect = False
+start_move = False
 
 character.draw_now(0,90)
 
@@ -42,15 +44,23 @@ while(True):
 
     else:
         # Move_circle
-        start_pos = 200
-        if ( x < start_pos):
-           x = x+2
+        start_pos = 400
+        if ( x < start_pos and not start_move) :
+            x = x +2
+            if ( x >= start_pos ):
+                start_move = True 
+
         else:   
             offset = offset +1
-            theta_x  =math.cos( (270+offset)/360*math.pi)
-            theta_Y = math.sin( (270+offset)/360*math.pi)
+            theta_x  =radius * math.cos( 2*(offset)/360*math.pi)
+            theta_Y = radius * math.sin( 2*(offset)/360*math.pi)
             x= x + theta_x
             y= y + theta_Y
+
+            if ( offset == 360 ):
+               start_move = False
+               move_rect = True
+               offset = 0
 
     #delay(0.01)
 
